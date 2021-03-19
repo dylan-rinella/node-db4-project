@@ -4,8 +4,6 @@ const get = () => {
   return db('recipes')
 }
 
-
-
 module.exports = {
-
+  get
 }
