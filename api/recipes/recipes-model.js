@@ -4,6 +4,12 @@ const get = () => {
   return db('recipes')
 }
 
+const getById = (id) => {
+  return db('recipes')
+    .where('id', id).first()
+}
+
 module.exports = {
-  get
+  get,
+  getById
 }

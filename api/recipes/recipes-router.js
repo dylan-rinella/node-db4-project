@@ -13,6 +13,14 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
+router.get('/:id', (req, res, next) => {
+  Recipes.getById(req.params.id)
+    .then(recipe => {
+      res.status(200).json(recipe)
+    })
+    .catch(next)
+})
+
 router.use((err, req, res, next) => { // eslint-disable-line
   res.status(400).json({
     message: err.message,
